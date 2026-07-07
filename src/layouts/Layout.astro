@@ -15,7 +15,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const { title } = Astro.props;
 
 const makeTitle = title ? `${title} | SCVI Immigration Law` : "SCVI Immigration Law";
-const description = "TODO(stage2): add final site description for SCVI Immigration Law.";
+const description = "SCVI Immigration Law provides personalized immigration services for individuals, families, students, and workers. We combine professional expertise with a client-first approach to help you navigate Canada's immigration system with confidence.";
 ---
 
 <!doctype html>
@@ -23,7 +23,7 @@ const description = "TODO(stage2): add final site description for SCVI Immigrati
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- TODO(stage2): add the real SCVI favicon. -->
+    <!-- TODO: add the real SCVI favicon. -->
     <meta name="generator" content={Astro.generator} />
 
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->

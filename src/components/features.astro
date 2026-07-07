@@ -1,12 +1,29 @@
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-navy-900">
-    TODO(stage2): add final services heading.
-  </h2>
-  <p class="text-lg mt-4 text-navy-600">
-    TODO(stage2): add final services introduction.
-  </p>
-</div>
+---
+const services = [
+  "BC Nominee Program",
+  "Canadian Citizenship",
+  "Parental Sponsorship",
+  "Permanent Residency – Express Entry",
+  "Post-Graduate Work Permit",
+  "Spousal and Common-Law Sponsorship",
+  "Study Permits",
+  "Visitor Visa",
+  "Work Permits",
+];
+---
 
-<div class="mt-16 border border-dashed border-navy-100 rounded-md p-6 text-navy-600">
-  TODO(stage2): add real services list.
-</div>
+<section class="mt-20">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-navy-900">
+    Services
+  </h2>
+
+  <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      services.map((service) => (
+        <div class="rounded-md border border-navy-100 bg-white px-5 py-4 text-lg font-medium text-navy-900 shadow-sm">
+          {service}
+        </div>
+      ))
+    }
+  </div>
+</section>

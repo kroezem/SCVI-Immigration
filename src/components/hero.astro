@@ -4,17 +4,25 @@ import { Icon } from "astro-icon/components";
 ---
 
 <main
-  class="grid place-items-start pt-8 pb-8 md:pt-12 md:pb-24">
-  <div>
-    <span class="text-teal-600 font-semibold uppercase tracking-wide text-sm">
-      SCVI Immigration Law
-    </span>
+  class="relative isolate overflow-hidden rounded-md min-h-[620px] md:min-h-[680px] grid items-end px-5 py-12 md:px-12 md:py-16 bg-navy-900">
+  <!-- Video: The Six / Pexels -->
+  <video
+    class="absolute inset-0 -z-20 h-full w-full object-cover"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="/video/victoria-hero.jpg">
+    <source src="/video/victoria-hero.mp4" type="video/mp4" />
+  </video>
+  <div class="absolute inset-0 -z-10 bg-navy-900/60"></div>
+  <div class="max-w-3xl">
     <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-navy-900 mt-3">
-      TODO(stage2): add final homepage headline.
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-white">
+      Your Path to Canada Starts Here
     </h1>
-    <p class="text-lg mt-4 text-navy-600 max-w-xl">
-      TODO(stage2): add final homepage subhead.
+    <p class="text-lg md:text-xl mt-5 text-cream-50 max-w-2xl leading-relaxed">
+      SCVI Immigration Law provides personalized immigration services for individuals, families, students, and workers. We combine professional expertise with a client-first approach to help you navigate Canada's immigration system with confidence.
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
@@ -26,10 +34,10 @@ import { Icon } from "astro-icon/components";
       <Link
         size="lg"
         style="outline"
-        href="/about"
-        class="flex gap-1 items-center justify-center">
-        <Icon class="text-navy-700 w-4 h-4" name="bx:bx-info-circle" />
-        Learn About Us
+        href="/contact"
+        class="flex gap-1 items-center justify-center bg-white/95">
+        <Icon class="text-navy-700 w-4 h-4" name="bx:bx-envelope" />
+        Contact Us
       </Link>
     </div>
   </div>

@@ -4,30 +4,51 @@ import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+
+const mapsHref = "https://www.google.com/maps/search/?api=1&query=2887%20Peatt%20Road%2C%20Langford%2C%20BC%20V9B%203V7";
 ---
 
 <Layout title="Contact">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">Get in Touch</Fragment>
-      <Fragment slot="desc">TODO(stage2): add final contact page introduction.</Fragment>
+      <Fragment slot="title">Contact Us</Fragment>
     </Sectionhead>
 
-    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
-      <div>
-        <h2 class="font-medium text-2xl text-navy-900">Contact SCVI Immigration Law</h2>
-        <p class="text-lg leading-relaxed text-navy-600 mt-3">
-          TODO(stage2): add final contact instructions.
-        </p>
-        <div class="mt-5">
-          <div class="flex items-center mt-2 space-x-2 text-navy-600">
-            <Icon class="text-teal-600 w-4 h-4" name="uil:map-marker" />
-            <span>TODO(stage2): add service area or office location.</span>
-          </div><div class="flex items-center mt-2 space-x-2 text-navy-600">
-            <Icon class="text-teal-600 w-4 h-4" name="uil:envelope" /><a
-              href="mailto:info@scviimmigrationlaw.ca"
-              >info@scviimmigrationlaw.ca</a
-            >
+    <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 mx-auto max-w-5xl mt-16">
+      <div class="space-y-10">
+        <div>
+          <h2 class="font-bold text-3xl text-navy-900">Our Office</h2>
+          <div class="mt-5 space-y-3 text-lg text-navy-600">
+            <div class="flex items-start gap-3">
+              <Icon class="text-teal-600 w-5 h-5 mt-1 shrink-0" name="uil:map-marker" />
+              <span>2887 Peatt Road, Langford, BC V9B 3V7</span>
+            </div>
+            <a
+              href={mapsHref}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 text-navy-700 hover:text-navy-900 font-medium">
+              <Icon class="text-teal-600 w-5 h-5" name="uil:external-link-alt" />
+              Directions
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-bold text-3xl text-navy-900">Contact Us</h2>
+          <div class="mt-5 space-y-3 text-lg text-navy-600">
+            <div class="flex items-center gap-3">
+              <Icon class="text-teal-600 w-5 h-5 shrink-0" name="uil:phone" />
+              <a href="tel:+17784300387">778-430-0387</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <Icon class="text-teal-600 w-5 h-5 shrink-0" name="uil:envelope" />
+              <a href="mailto:info@scviimmigrationlaw.ca">info@scviimmigrationlaw.ca</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <Icon class="text-teal-600 w-5 h-5 shrink-0" name="uil:clock" />
+              <span>Monday to Thursday, 9:00–4:00</span>
+            </div>
           </div>
         </div>
       </div>
