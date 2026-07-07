@@ -1,27 +1,26 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
-import Sectionhead from "@/components/sectionhead.astro";
 ---
 
 <Layout title="About">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">Meet Sonia Chauhan</Fragment>
-    </Sectionhead>
-
-    <div class="grid gap-10 mx-auto max-w-5xl mt-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-      <div class="aspect-[4/5] rounded-md bg-navy-100 border border-navy-100 grid place-items-center text-center text-navy-600 p-8">
-        <!-- TODO(stage2): replace this placeholder with Sonia Chauhan's approved headshot. -->
-      </div>
-      <div class="space-y-5 text-lg leading-relaxed text-navy-600">
-        <p>
-          Sonia is the founder of SCVI Immigration Law Office and a dedicated immigration lawyer with over five years of experience practicing immigration law in British Columbia. She is passionate about helping individuals, families, and students navigate Canada's immigration system with confidence.
-        </p>
-        <p>
-          Known for her client-centred approach, Sonia provides practical legal guidance, clear communication, and personalized solutions tailored to each client's personal circumstances. She is committed to making the immigration process as straightforward and stress-free as possible while helping clients achieve their goals in Canada.
-        </p>
-      </div>
-    </div>
-  </Container>
+  <main>
+    <section class="section-padding">
+      <Container>
+        <div class="mx-auto max-w-3xl">
+          <h1 class="text-4xl font-bold text-navy-900 lg:text-5xl lg:tracking-tight">
+            Meet Sonia Chauhan
+          </h1>
+          <div class="section-copy">
+            <p>
+              Sonia is the founder of SCVI Immigration Law Office and a dedicated immigration lawyer with over five years of experience practicing immigration law in British Columbia. Sonia graduated from law school in the United Kingdom. Having lived abroad herself, she understands firsthand what it means to be a newcomer to Canada. She is passionate about helping individuals, families, and students navigate Canada's immigration system with confidence.
+            </p>
+            <p>
+              Known for her client-centred approach, Sonia provides practical legal guidance, clear communication, and personalized solutions tailored to each client's personal circumstances. She is committed to making the immigration process as straightforward and stress-free as possible while helping clients achieve their goals in Canada.
+            </p>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
 </Layout>

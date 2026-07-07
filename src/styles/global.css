@@ -41,3 +41,49 @@
     color: var(--color-navy-900);
   }
 }
+
+@layer components {
+  .section-padding {
+    padding-block: 4rem;
+  }
+
+  .section-eyebrow {
+    color: var(--color-teal-600);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    line-height: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .section-divider {
+    background: var(--color-teal-500);
+    border-radius: 9999px;
+    height: 0.25rem;
+    margin-top: 1.25rem;
+    width: 50px;
+  }
+
+  .section-copy {
+    color: var(--color-navy-600);
+    font-size: 1.125rem;
+    line-height: 1.625;
+    margin-top: 1.25rem;
+  }
+
+  .section-copy > * + * {
+    margin-top: 1.25rem;
+  }
+
+  @media (min-width: 64rem) {
+    .section-copy-desktop-flush {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .section-padding {
+      padding-block: 6rem;
+    }
+  }
+}

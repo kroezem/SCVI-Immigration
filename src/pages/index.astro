@@ -7,35 +7,44 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="">
-  <Container>
+  <main>
     <Hero />
-    <section class="mt-20 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-navy-900">
-        Helping You Build Your Future in Canada
-      </h2>
-      <div class="space-y-5 text-lg leading-relaxed text-navy-600">
-        <p>
-          At SCVI Immigration Law, we understand that every immigration journey is unique. Whether you're looking to study, work, reunite with family, or establish permanent residence in Canada, our goal is to provide clear, reliable guidance that helps you move forward with confidence.
-        </p>
-        <p>
-          We are committed to delivering personalized immigration services tailored to each client's individual circumstances. By taking the time to understand your goals, we develop thoughtful strategies and ensure that all IRCC submissions are handled end to end.
-        </p>
-      </div>
+    <section class="section-padding">
+      <Container>
+        <div class="grid gap-8 lg:grid-cols-[1fr_2fr] lg:items-start">
+          <h2 class="text-4xl font-bold text-navy-900 lg:text-5xl lg:tracking-tight">
+            Helping You Build Your Future in Canada
+          </h2>
+          <div class="section-copy section-copy-desktop-flush">
+            <p>
+              At SCVI Immigration Law, we understand that every immigration journey is unique. Whether you're looking to study, work, reunite with family, or establish permanent residence in Canada, our goal is to provide clear, reliable guidance that helps you move forward with confidence.
+            </p>
+            <p>
+              We are committed to delivering personalized immigration services tailored to each client's individual circumstances. By taking the time to understand your goals, we develop thoughtful strategies and ensure that all IRCC submissions are handled end to end.
+            </p>
+          </div>
+        </div>
+      </Container>
     </section>
     <Features />
-    <section class="mt-20 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-      <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-navy-900">
-        Our Approach
-      </h2>
-      <div class="space-y-5 text-lg leading-relaxed text-navy-600">
-        <p>
-          At SCVI Immigration, we believe successful outcomes begin with understanding our clients' goals. We take a collaborative approach, carefully assessing each situation, explaining available pathways, and developing a strategy that aligns with your individual needs.
-        </p>
-        <p>
-          From your initial consultation through application preparation, submission, and ongoing support, we are committed to providing timely communication, practical guidance, and professional representation. Our goal is to make the immigration process as straightforward and stress-free as possible, so you can focus on your future in Canada with confidence.
-        </p>
-      </div>
+    <section class="section-padding">
+      <Container>
+        <div class="text-center">
+          <h2 class="text-4xl font-bold text-navy-900 lg:text-5xl lg:tracking-tight">
+            Our Approach
+          </h2>
+          <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="section-copy mx-auto max-w-3xl text-left">
+          <p>
+            At SCVI Immigration, we believe successful outcomes begin with understanding our clients' goals. We take a collaborative approach, carefully assessing each situation, explaining available pathways, and developing a strategy that aligns with your individual needs.
+          </p>
+          <p>
+            From your initial consultation through application preparation, submission, and ongoing support, we are committed to providing timely communication, practical guidance, and professional representation. Our goal is to make the immigration process as straightforward and stress-free as possible, so you can focus on your future in Canada with confidence.
+          </p>
+        </div>
+      </Container>
     </section>
     <Cta />
-  </Container>
+  </main>
 </Layout>

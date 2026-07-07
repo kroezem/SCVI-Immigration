@@ -1,4 +1,6 @@
 ---
+import Container from "@/components/container.astro";
+
 const services = [
   "BC Nominee Program",
   "Canadian Citizenship",
@@ -18,23 +20,25 @@ const mobileWideServices = new Set([
 ]);
 ---
 
-<section class="mt-20">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-navy-900">
-    Services
-  </h2>
+<section class="section-padding">
+  <Container>
+    <h2 class="text-4xl font-bold text-navy-900 lg:text-5xl lg:tracking-tight">
+      Services
+    </h2>
 
-  <div class="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-3">
-    {
-      services.map((service) => (
-        <div
-          class:list={[
-            "rounded-md border border-navy-100 bg-white px-2 py-3 text-sm leading-6 font-medium text-navy-900 shadow-sm sm:px-5 sm:py-4 sm:text-lg sm:leading-7",
-            mobileWideServices.has(service) && "max-sm:col-span-2",
-          ]}
-        >
-          {service}
-        </div>
-      ))
-    }
-  </div>
+    <div class="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-3">
+      {
+        services.map((service) => (
+          <div
+            class:list={[
+              "rounded-md border border-navy-100 bg-white px-2 py-3 text-sm leading-6 font-medium text-navy-900 shadow-sm sm:px-5 sm:py-4 sm:text-lg sm:leading-7",
+              mobileWideServices.has(service) && "max-sm:col-span-2",
+            ]}
+          >
+            {service}
+          </div>
+        ))
+      }
+    </div>
+  </Container>
 </section>
