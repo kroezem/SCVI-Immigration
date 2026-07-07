@@ -1,0 +1,36 @@
+---
+import Link from "@/components/ui/link.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<main
+  class="grid place-items-start pt-8 pb-8 md:pt-12 md:pb-24">
+  <div>
+    <span class="text-teal-600 font-semibold uppercase tracking-wide text-sm">
+      SCVI Immigration Law
+    </span>
+    <h1
+      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter text-navy-900 mt-3">
+      TODO(stage2): add final homepage headline.
+    </h1>
+    <p class="text-lg mt-4 text-navy-600 max-w-xl">
+      TODO(stage2): add final homepage subhead.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        href="/contact"
+        class="flex gap-1 items-center justify-center">
+        <Icon class="text-white w-5 h-5" name="bx:bx-calendar" />
+        Book a Consultation
+      </Link>
+      <Link
+        size="lg"
+        style="outline"
+        href="/about"
+        class="flex gap-1 items-center justify-center">
+        <Icon class="text-navy-700 w-4 h-4" name="bx:bx-info-circle" />
+        Learn About Us
+      </Link>
+    </div>
+  </div>
+</main>
