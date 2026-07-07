@@ -11,7 +11,11 @@ const services = [
   "Work Permits",
 ];
 
-const mobileFeaturedService = "Permanent Residency – Express Entry";
+const mobileWideServices = new Set([
+  "Permanent Residency – Express Entry",
+  "Post-Graduate Work Permit",
+  "Spousal and Common-Law Sponsorship",
+]);
 ---
 
 <section class="mt-20">
@@ -25,8 +29,7 @@ const mobileFeaturedService = "Permanent Residency – Express Entry";
         <div
           class:list={[
             "rounded-md border border-navy-100 bg-white px-2 py-3 text-sm leading-6 font-medium text-navy-900 shadow-sm sm:px-5 sm:py-4 sm:text-lg sm:leading-7",
-            service === mobileFeaturedService &&
-              "max-sm:order-last max-sm:col-span-2",
+            mobileWideServices.has(service) && "max-sm:col-span-2",
           ]}
         >
           {service}
