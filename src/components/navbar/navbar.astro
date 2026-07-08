@@ -16,9 +16,12 @@ const menuitems = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+  <header
+    id="scvi-mobile-nav"
+    class="scvi-mobile-nav flex flex-col lg:flex-row justify-between items-center my-5">
     <Astronav>
-      <div class="flex w-full lg:w-auto items-center justify-between">
+      <div
+        class="scvi-mobile-nav-header flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
           ><span class="font-bold text-navy-900">SCVI</span><span
             class="text-navy-600"> | Immigration Law</span
@@ -28,24 +31,45 @@ const menuitems = [
           <MenuIcon class="w-4 h-4 text-navy-800" />
         </div>
       </div>
-      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
-        <ul class="flex flex-col lg:flex-row lg:gap-3">
-          {
-            menuitems.map((item) => (
-              <>
-                <li>
-                  <a
-                    href={item.path}
-                    class="flex lg:px-3 py-2 items-center text-navy-600 hover:text-navy-900">
-                    <span> {item.title}</span>
-                  </a>
-                </li>
-              </>
-            ))
-          }
-        </ul>
-        <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="/contact" size="md" block>Book a Consultation</Link>
+      <MenuItems
+        class="hidden w-full flex-1 border-t border-navy-100 pt-8 lg:w-auto lg:flex lg:flex-none lg:border-t-0 lg:pt-0 lg:mt-0">
+        <div
+          class="flex min-h-[calc(100dvh-7.25rem)] flex-col items-center justify-center lg:min-h-0 lg:flex-row lg:justify-start">
+          <ul
+            class="flex flex-col items-center gap-6 lg:flex-row lg:items-stretch lg:gap-3">
+            {
+              menuitems.map((item) => (
+                <>
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex items-center py-2 text-3xl font-bold text-navy-900 hover:text-navy-600 lg:px-3 lg:text-base lg:font-normal lg:text-navy-600 lg:hover:text-navy-900">
+                      <span> {item.title}</span>
+                    </a>
+                  </li>
+                </>
+              ))
+            }
+          </ul>
+          <div class="mt-9 flex w-full max-w-xs items-center gap-4 lg:hidden">
+            <Link href="/contact" size="md" block>Book a Consultation</Link>
+          </div>
+          <div
+            class="mt-7 w-full max-w-xs border-t border-navy-100 pt-6 text-center lg:hidden">
+            <p class="text-xs font-semibold uppercase tracking-wide text-navy-600">
+              Quick Contact
+            </p>
+            <div class="mt-3 flex flex-col gap-2 text-sm text-navy-600">
+              <a href="tel:+17784300387" class="hover:text-navy-900">
+                778-430-0387
+              </a>
+              <a
+                href="mailto:info@scviimmigrationlaw.ca"
+                class="hover:text-navy-900">
+                info@scviimmigrationlaw.ca
+              </a>
+            </div>
+          </div>
         </div>
       </MenuItems>
     </Astronav>
@@ -56,3 +80,73 @@ const menuitems = [
     </div>
   </header>
 </Container>
+
+<script>
+  const navOpenClass = "scvi-mobile-nav-open";
+  const navShellOpenClass = "is-open";
+  const mobileQuery = "(max-width: 1023px)";
+
+  function initMobileNavOverlay() {
+    const nav = document.getElementById("scvi-mobile-nav");
+    const menuItems = nav?.querySelector(".astronav-items");
+
+    if (!nav || !menuItems) {
+      return;
+    }
+
+    const syncOverlayState = () => {
+      const isMobile = window.matchMedia(mobileQuery).matches;
+      const isOpen = isMobile && !menuItems.classList.contains("hidden");
+
+      document.body.classList.toggle(navOpenClass, isOpen);
+      nav.classList.toggle(navShellOpenClass, isOpen);
+    };
+
+    const observer = new MutationObserver(syncOverlayState);
+    observer.observe(menuItems, { attributes: true, attributeFilter: ["class"] });
+
+    const mediaQuery = window.matchMedia(mobileQuery);
+    mediaQuery.addEventListener("change", syncOverlayState);
+
+    document.addEventListener(
+      "astro:before-swap",
+      () => {
+        document.body.classList.remove(navOpenClass);
+        nav.classList.remove(navShellOpenClass);
+        observer.disconnect();
+        mediaQuery.removeEventListener("change", syncOverlayState);
+      },
+      { once: true }
+    );
+
+    syncOverlayState();
+  }
+
+  ["DOMContentLoaded", "astro:after-swap"].forEach((event) => {
+    document.addEventListener(event, initMobileNavOverlay);
+  });
+</script>
+
+<style is:global>
+  body.scvi-mobile-nav-open {
+    overflow: hidden;
+  }
+</style>
+
+<style>
+  @media (max-width: 63.999rem) {
+    .scvi-mobile-nav.is-open {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      align-items: stretch;
+      margin: 0;
+      padding: 1.25rem;
+      background: var(--color-cream-50);
+    }
+
+    .scvi-mobile-nav.is-open .scvi-mobile-nav-header {
+      padding-bottom: 1.25rem;
+    }
+  }
+</style>
