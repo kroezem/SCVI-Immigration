@@ -7,7 +7,19 @@ import Container from "@/components/container.astro";
   <main>
     <section class="section-padding">
       <Container>
-        <div class="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center">
+        <div class="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
+          <div class="w-full">
+            <!-- Video: Sergey Guk / Pexels -->
+            <video
+              class="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
+              autoplay
+              muted
+              loop
+              playsinline
+              poster="/video/about-coast.jpg">
+              <source src="/video/about-coast.mp4" type="video/mp4" />
+            </video>
+          </div>
           <div class="max-w-2xl">
             <h1 class="text-4xl font-bold text-navy-900 lg:text-5xl lg:tracking-tight">
               Meet Sonia Chauhan
@@ -20,18 +32,6 @@ import Container from "@/components/container.astro";
                 Known for her client-centred approach, Sonia provides practical legal guidance, clear communication, and personalized solutions tailored to each client's personal circumstances. She is committed to making the immigration process as straightforward and stress-free as possible while helping clients achieve their goals in Canada.
               </p>
             </div>
-          </div>
-          <div class="w-full">
-            <!-- Video: Sergey Guk / Pexels -->
-            <video
-              class="aspect-[4/3] w-full rounded-xl object-cover shadow-lg"
-              autoplay
-              muted
-              loop
-              playsinline
-              poster="/video/about-coast.jpg">
-              <source src="/video/about-coast.mp4" type="video/mp4" />
-            </video>
           </div>
         </div>
       </Container>
