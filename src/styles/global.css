@@ -51,8 +51,18 @@
 }
 
 @layer components {
+  :root {
+    --section-space: 2.5rem;
+    --footer-space: 3rem;
+  }
+
   .section-padding {
-    padding-block: 2.5rem;
+    padding-block: var(--section-space);
+  }
+
+  .site-footer {
+    margin-top: var(--section-space);
+    padding-block: var(--footer-space);
   }
 
   .section-eyebrow {
@@ -90,8 +100,9 @@
   }
 
   @media (min-width: 48rem) {
-    .section-padding {
-      padding-block: 3.5rem;
+    :root {
+      --section-space: 3.5rem;
+      --footer-space: 4rem;
     }
   }
 }
