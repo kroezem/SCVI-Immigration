@@ -22,19 +22,40 @@ import Container from "@/components/container.astro";
             </div>
           </div>
           <div class="w-full">
-            <!-- Video: Sergey Guk / Pexels -->
+            <!-- Video: Michael S. / Pexels -->
             <video
               class="aspect-[4/3] w-full rounded-[28px] object-cover shadow-[0_18px_44px_rgba(15,36,64,0.14)]"
+              data-about-flag-video
               autoplay
               muted
               loop
               playsinline
-              poster="/video/about-coast.jpg">
-              <source src="/video/about-coast.mp4" type="video/mp4" />
+              poster="/video/about-flag.jpg">
+              <source src="/video/about-flag.mp4" type="video/mp4" />
             </video>
           </div>
         </div>
       </Container>
     </section>
+    <script>
+      const ABOUT_VIDEO_PLAYBACK_RATE = 0.6;
+      const aboutVideo = document.querySelector<HTMLVideoElement>(
+        "[data-about-flag-video]",
+      );
+
+      if (aboutVideo) {
+        const setPlaybackRate = () => {
+          aboutVideo.playbackRate = ABOUT_VIDEO_PLAYBACK_RATE;
+        };
+
+        if (aboutVideo.readyState >= HTMLMediaElement.HAVE_METADATA) {
+          setPlaybackRate();
+        } else {
+          aboutVideo.addEventListener("loadedmetadata", setPlaybackRate, {
+            once: true,
+          });
+        }
+      }
+    </script>
   </main>
 </Layout>
