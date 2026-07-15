@@ -15,8 +15,16 @@
   --color-navy-900: #0f2440;
   --color-teal-500: #2c9c95;
   --color-teal-600: #218079;
-  --color-cream-50: #faf8f5;
+  --color-teal-chip: #e5f1ef;
+  --color-cream-50: #faf6f0;
   --color-cream-100: #f4f0ea;
+  --color-page: #faf6f0;
+  --color-surface: #ffffff;
+  --color-body: #4a5c72;
+  --color-muted: #6b7d92;
+  --color-faint: #8a9bad;
+  --color-hairline: #ece5db;
+  --color-cool-border: #d9e2ec;
 }
 
 /*
@@ -37,14 +45,14 @@
   }
 
   body {
-    background: var(--color-cream-50);
-    color: var(--color-navy-900);
+    background: var(--color-page);
+    color: var(--color-body);
   }
 }
 
 @layer components {
   .section-padding {
-    padding-block: 4rem;
+    padding-block: 2.5rem;
   }
 
   .section-eyebrow {
@@ -65,7 +73,7 @@
   }
 
   .section-copy {
-    color: var(--color-navy-600);
+    color: var(--color-body);
     font-size: 1.125rem;
     line-height: 1.625;
     margin-top: 1.25rem;
@@ -83,7 +91,7 @@
 
   @media (min-width: 48rem) {
     .section-padding {
-      padding-block: 6rem;
+      padding-block: 3.5rem;
     }
   }
 }

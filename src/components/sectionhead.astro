@@ -3,12 +3,12 @@ const { align = "center" } = Astro.props;
 const hasDesc = Astro.slots.has("desc");
 ---
 
-<div class:list={["mt-16", align === "center" && "text-center"]}>
-  <h1 class="text-4xl lg:text-5xl font-bold lg:tracking-tight text-navy-900">
+<div class:list={[align === "center" && "text-center"]}>
+  <h1 class="text-4xl font-bold tracking-tight text-navy-900 lg:text-5xl">
     <slot name="title">Title</slot>
   </h1>
   {hasDesc && (
-    <p class="text-lg mt-4 text-navy-600">
+    <p class="mt-4 text-lg text-body">
       <slot name="desc" />
     </p>
   )}

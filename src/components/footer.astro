@@ -1,5 +1,44 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-navy-600">
-    © 2026 SCVI Immigration Law. All rights reserved.
-  </p>
+---
+import Container from "@/components/container.astro";
+---
+
+<footer class="border-t border-hairline bg-white py-12">
+  <Container>
+    <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <a href="/" class="inline-flex items-center gap-2 text-lg">
+          <img
+            src="/scvi-icon.png"
+            alt="SCVI Immigration Law logo"
+            class="h-12 w-12 object-contain"
+          />
+          <span class="font-bold text-navy-900">SCVI</span>
+          <span class="text-body">Immigration Law</span>
+        </a>
+      </div>
+      <div>
+        <p class="text-xs font-bold tracking-[0.1em] text-teal-600 uppercase">Office</p>
+        <div class="mt-4 space-y-1 text-sm leading-6 text-body">
+          <p>2887 Peatt Road</p>
+          <p>Langford, BC V9B 3V7</p>
+          <p>Mon–Thu · 9:00–4:00</p>
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold tracking-[0.1em] text-teal-600 uppercase">Contact</p>
+        <div class="mt-4 flex flex-col items-start gap-1 text-sm leading-6 text-body">
+          <a href="tel:+17784300387" class="transition hover:text-teal-600">778-430-0387</a>
+          <a
+            href="mailto:info@scviimmigrationlaw.ca"
+            class="break-all transition hover:text-teal-600">info@scviimmigrationlaw.ca</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 border-t border-hairline pt-6">
+      <p class="text-sm text-muted">
+        © 2026 SCVI Immigration Law. All rights reserved.
+      </p>
+    </div>
+  </Container>
 </footer>

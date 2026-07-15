@@ -1,23 +1,33 @@
 ---
 import Container from "@/components/container.astro";
 
-const services = [
-  "BC Nominee Program",
-  "Canadian Citizenship",
-  "Permanent Residency – Express Entry",
-  "Parental Sponsorship",
-  "Study Permits",
-  "Post-Graduate Work Permit",
-  "Visitor Visa",
-  "Work Permits",
-  "Spousal and Common-Law Sponsorship",
+// TODO: Service chip labels are pending client sign-off.
+const serviceGroups = [
+  {
+    label: "Permanent Residency & Citizenship",
+    services: [
+      "BC Nominee Program",
+      "Permanent Residency – Express Entry",
+      "Canadian Citizenship",
+    ],
+  },
+  {
+    label: "Work & Study",
+    services: [
+      "Work Permits",
+      "Post-Graduate Work Permit",
+      "Study Permits",
+    ],
+  },
+  {
+    label: "Family & Visitors",
+    services: [
+      "Spousal and Common-Law Sponsorship",
+      "Parental Sponsorship",
+      "Visitor Visa",
+    ],
+  },
 ];
-
-const mobileWideServices = new Set([
-  "Permanent Residency – Express Entry",
-  "Post-Graduate Work Permit",
-  "Spousal and Common-Law Sponsorship",
-]);
 ---
 
 <section class="section-padding">
@@ -26,16 +36,17 @@ const mobileWideServices = new Set([
       Services
     </h2>
 
-    <div class="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-3">
+    <div class="mt-7 grid gap-4 lg:grid-cols-3">
       {
-        services.map((service) => (
+        serviceGroups.map((group) => (
           <div
-            class:list={[
-              "rounded-md border border-navy-100 bg-white px-2 py-3 text-sm leading-6 font-medium text-navy-900 shadow-sm sm:px-5 sm:py-4 sm:text-lg sm:leading-7",
-              mobileWideServices.has(service) && "max-sm:col-span-2",
-            ]}
-          >
-            {service}
+            class="rounded-[18px] bg-white p-[22px] shadow-[0_4px_16px_rgba(15,36,64,0.06)]">
+            <span class="inline-block rounded-full bg-teal-chip px-3 py-1.5 text-[10px] font-bold tracking-[0.08em] text-teal-600 uppercase">
+              {group.label}
+            </span>
+            <ul class="mt-4 space-y-1.5 text-base leading-[1.6] font-semibold text-navy-900 sm:text-lg">
+              {group.services.map((service) => <li>{service}</li>)}
+            </ul>
           </div>
         ))
       }

@@ -11,13 +11,12 @@ import Layout from "@/layouts/Layout.astro";
     <Hero />
     <section class="section-padding">
       <Container>
-        <div class="text-center">
-          <h2 class="text-4xl font-bold text-navy-900 lg:text-5xl lg:tracking-tight">
+        <div class="mx-auto max-w-[820px] text-center">
+          <h2 class="text-4xl font-bold tracking-tight text-navy-900 lg:text-5xl">
             Helping You Build Your Future in Canada
           </h2>
-          <div class="section-divider mx-auto"></div>
         </div>
-        <div class="section-copy mx-auto max-w-5xl text-left">
+        <div class="section-copy mx-auto max-w-[44rem] text-left">
           <p>
             At SCVI Immigration Law, we understand that every immigration journey is unique. Whether you're looking to study, work, reunite with family, or establish permanent residence in Canada, our goal is to provide clear, reliable guidance that helps you move forward with confidence.
           </p>
@@ -30,18 +29,29 @@ import Layout from "@/layouts/Layout.astro";
     <Features />
     <section class="section-padding">
       <Container>
-        <div class="grid gap-8 lg:grid-cols-[1fr_2fr] lg:items-start">
-          <h2 class="text-4xl font-bold text-navy-900 lg:text-5xl lg:tracking-tight">
-            Our Approach
-          </h2>
-          <div class="section-copy section-copy-desktop-flush">
-            <p>
-              At SCVI Immigration, we believe successful outcomes begin with understanding our clients' goals. We take a collaborative approach, carefully assessing each situation, explaining available pathways, and developing a strategy that aligns with your individual needs.
-            </p>
-            <p>
-              From your initial consultation through application preparation, submission, and ongoing support, we are committed to providing timely communication, practical guidance, and professional representation. Our goal is to make the immigration process as straightforward and stress-free as possible, so you can focus on your future in Canada with confidence.
-            </p>
+        <div class="mx-auto grid max-w-[76rem] overflow-hidden rounded-[28px] bg-navy-800 lg:grid-cols-[1fr_0.8fr]">
+          <div class="px-7 py-10 sm:px-11 lg:py-12">
+            <h2 class="text-4xl font-bold tracking-tight text-white lg:text-5xl">
+              Our Approach
+            </h2>
+            <div class="section-copy text-[#c7d3e2]">
+              <p>
+                At SCVI Immigration, we believe successful outcomes begin with understanding our clients' goals. We take a collaborative approach, carefully assessing each situation, explaining available pathways, and developing a strategy that aligns with your individual needs.
+              </p>
+              <p>
+                From your initial consultation through application preparation, submission, and ongoing support, we are committed to providing timely communication, practical guidance, and professional representation. Our goal is to make the immigration process as straightforward and stress-free as possible, so you can focus on your future in Canada with confidence.
+              </p>
+            </div>
           </div>
+          <video
+            class="min-h-72 h-full w-full object-cover sm:min-h-96 lg:min-h-full"
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="/video/about-coast.jpg">
+            <source src="/video/about-coast.mp4" type="video/mp4" />
+          </video>
         </div>
       </Container>
     </section>
