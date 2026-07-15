@@ -13,7 +13,7 @@ import Button from "./ui/button.astro";
       type="text"
       placeholder="Full Name"
       required
-      class="w-full rounded-xl border border-cool-border bg-white px-4 py-3 text-body outline-hidden placeholder:text-muted focus:border-teal-500 focus:ring-4 focus:ring-teal-chip"
+      class="w-full rounded-xl border border-cool-border bg-white px-4 py-3 text-body outline-hidden placeholder:text-muted focus:border-brand-500 focus:ring-4 focus:ring-brand-50"
       name="name"
     />
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
@@ -27,7 +27,7 @@ import Button from "./ui/button.astro";
       placeholder="Email Address"
       name="email"
       required
-      class="w-full rounded-xl border border-cool-border bg-white px-4 py-3 text-body outline-hidden placeholder:text-muted focus:border-teal-500 focus:ring-4 focus:ring-teal-chip"
+      class="w-full rounded-xl border border-cool-border bg-white px-4 py-3 text-body outline-hidden placeholder:text-muted focus:border-brand-500 focus:ring-4 focus:ring-brand-50"
     />
     <div class="empty-feedback text-red-400 text-sm mt-1">
       Please provide your email address.
@@ -41,7 +41,7 @@ import Button from "./ui/button.astro";
       name="message"
       required
       placeholder="Your Message"
-      class="h-36 w-full rounded-xl border border-cool-border bg-white px-4 py-3 text-body outline-hidden placeholder:text-muted focus:border-teal-500 focus:ring-4 focus:ring-teal-chip"
+      class="h-36 w-full rounded-xl border border-cool-border bg-white px-4 py-3 text-body outline-hidden placeholder:text-muted focus:border-brand-500 focus:ring-4 focus:ring-brand-50"
     ></textarea>
     <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
       Please enter your message.
@@ -84,7 +84,7 @@ import Button from "./ui/button.astro";
     }
     result.style.display = "block";
     result.classList.remove("text-red-500");
-    result.classList.add("text-teal-600");
+    result.classList.add("text-brand-700");
     // TODO(stage2): connect this form backend.
     result.innerHTML = "";
     form.reset();
