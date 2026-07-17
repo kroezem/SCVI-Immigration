@@ -10,8 +10,7 @@ import Button from "./ui/button.astro";
   novalidate>
   <input type="hidden" name="access_key" value="a60cbf10-1280-4407-bc80-25b28ea68b50" />
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
-  <input type="hidden" name="subject" value="New inquiry from SCVI Immigration Law website" />
-  <div id="result" class="mt-3 text-center" aria-live="polite"></div>
+  <input type="hidden" name="subject" value="Contact Us Form Submission - SCVI Immigration" />
   <div class="mb-5">
     <input
       type="text"
@@ -51,7 +50,17 @@ import Button from "./ui/button.astro";
       Please enter your message.
     </div>
   </div>
-  <Button type="submit" size="lg" block>Send Message</Button>
+  <div aria-live="polite">
+    <Button
+      id="submit-button"
+      type="submit"
+      size="lg"
+      block
+      class="min-w-44 disabled:cursor-default disabled:bg-brand-700 disabled:text-white disabled:opacity-100 disabled:hover:bg-brand-700">
+      Send Message
+    </Button>
+  </div>
+  <div id="result" class="mt-3 hidden text-left text-sm text-red-500" aria-live="polite"></div>
 </form>
 
 <style>
@@ -77,6 +86,7 @@ import Button from "./ui/button.astro";
 <script is:inline>
   const form = document.getElementById("form");
   const result = document.getElementById("result");
+  const submitButton = document.getElementById("submit-button");
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -86,9 +96,10 @@ import Button from "./ui/button.astro";
       return;
     }
 
-    result.style.display = "block";
-    result.textContent = "Sending…";
-    result.classList.remove("text-red-500", "text-brand-700");
+    result.textContent = "";
+    result.classList.add("hidden");
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending…";
 
     try {
       const formData = new FormData(form);
@@ -105,13 +116,14 @@ import Button from "./ui/button.astro";
         throw new Error("Web3Forms submission failed");
       }
 
-      result.textContent = "Thanks — your message has been sent.";
-      result.classList.add("text-brand-700");
+      submitButton.textContent = "Message Sent ✓";
       form.reset();
       form.classList.remove("was-validated");
-    } catch (error) {
+    } catch {
       result.textContent = "Something went wrong. Please try again or email us directly.";
-      result.classList.add("text-red-500");
+      result.classList.remove("hidden");
+      submitButton.textContent = "Send Message";
+      submitButton.disabled = false;
     }
   });
 </script>
