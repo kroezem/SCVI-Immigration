@@ -8,7 +8,7 @@ import Button from "./ui/button.astro";
   id="form"
   class="needs-validation"
   novalidate>
-  <input type="hidden" name="access_key" value={import.meta.env.PUBLIC_WEB3FORMS_KEY} />
+  <input type="hidden" name="access_key" value="a60cbf10-1280-4407-bc80-25b28ea68b50" />
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <input type="hidden" name="subject" value="New inquiry from SCVI Immigration Law website" />
   <div id="result" class="mt-3 text-center" aria-live="polite"></div>
@@ -91,9 +91,10 @@ import Button from "./ui/button.astro";
     result.classList.remove("text-red-500", "text-brand-700");
 
     try {
+      const formData = new FormData(form);
       const response = await fetch(form.action, {
         method: form.method,
-        body: new FormData(form),
+        body: formData,
         headers: {
           Accept: "application/json",
         },
