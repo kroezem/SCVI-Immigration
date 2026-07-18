@@ -8,15 +8,41 @@ import "@fontsource-variable/bricolage-grotesque";
 import "../styles/global.css";
 
 export interface Props {
-  title: string;
+  title?: string;
+  description?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageURL = new URL("/video/victoria-hero.jpg", Astro.site).toString();
 
-const { title } = Astro.props;
+const { title, description: pageDescription } = Astro.props;
 
 const makeTitle = title ? `${title} | SCVI Immigration Law` : "SCVI Immigration Law";
-const description = "SCVI Immigration Law provides personalized immigration services for individuals, families, students, and workers. We combine professional expertise with a client-first approach to help you navigate Canada's immigration system with confidence.";
+const defaultDescription = "SCVI Immigration Law provides personalized immigration services for individuals, families, students, and workers. We combine professional expertise with a client-first approach to help you navigate Canada's immigration system with confidence.";
+const description = pageDescription ?? defaultDescription;
+
+const legalService = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  name: "SCVI Immigration Law",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "2887 Peatt Road",
+    addressLocality: "Langford",
+    addressRegion: "BC",
+    postalCode: "V9B 3V7",
+    addressCountry: "CA",
+  },
+  telephone: "778-430-0387",
+  email: "info@scviimmigrationlaw.ca",
+  url: Astro.site?.origin,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+    opens: "09:00",
+    closes: "16:00",
+  },
+};
 ---
 
 <!doctype html>
@@ -35,7 +61,8 @@ const description = "SCVI Immigration Law provides personalized immigration serv
       description={description}
       canonical={canonicalURL}
       twitter={{
-        card: "summary",
+        card: "summary_large_image",
+        image: ogImageURL,
       }}
       extend={{
         meta: [
@@ -43,9 +70,11 @@ const description = "SCVI Immigration Law provides personalized immigration serv
           { property: "og:description", content: description },
           { property: "og:type", content: "website" },
           { property: "og:url", content: canonicalURL },
+          { property: "og:image", content: ogImageURL },
         ],
       }}
     />
+    <script type="application/ld+json" set:html={JSON.stringify(legalService)} />
   </head>
   <body>
     <Navbar />
