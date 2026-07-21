@@ -6,7 +6,9 @@ import Hero from "@/components/hero.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
-<Layout>
+<Layout
+  fullTitle="Immigration Lawyer in Victoria, BC | SCVI Immigration Law"
+  description="SCVI Immigration Law provides guidance from an immigration lawyer serving individuals, families, students, and workers in Victoria, BC and Greater Victoria.">
   <main>
     <Hero />
     <section class="section-padding">
@@ -45,6 +47,7 @@ import Layout from "@/layouts/Layout.astro";
           </div>
           <video
             class="min-h-72 h-full w-full object-cover sm:min-h-96 lg:min-h-full"
+            aria-label="Aerial view of the Vancouver Island coastline"
             autoplay
             muted
             loop

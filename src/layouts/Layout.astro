@@ -9,15 +9,16 @@ import "../styles/global.css";
 
 export interface Props {
   title?: string;
+  fullTitle?: string;
   description?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImageURL = new URL("/video/victoria-hero.jpg", Astro.site).toString();
 
-const { title, description: pageDescription } = Astro.props;
+const { title, fullTitle, description: pageDescription } = Astro.props;
 
-const makeTitle = title ? `${title} | SCVI Immigration Law` : "SCVI Immigration Law";
+const makeTitle = fullTitle ?? (title ? `${title} | SCVI Immigration Law` : "SCVI Immigration Law");
 const defaultDescription = "SCVI Immigration Law provides personalized immigration services for individuals, families, students, and workers. We combine professional expertise with a client-first approach to help you navigate Canada's immigration system with confidence.";
 const description = pageDescription ?? defaultDescription;
 
